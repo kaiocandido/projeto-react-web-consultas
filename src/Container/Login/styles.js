@@ -34,7 +34,8 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background: white;
-  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 768px) {
@@ -163,7 +164,8 @@ export const ContainerBanner = styled.div`
   align-items: center;
   justify-content: space-between;
   background: white;
-  border-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background: linear-gradient(to bottom, #21518f, #075a56, #09425e);
 
