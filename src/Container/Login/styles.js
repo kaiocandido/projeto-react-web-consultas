@@ -1,8 +1,7 @@
-import styled from "styled-components";
-import BackgroundImage from "../../assets/global-communication-background-business-network-design.jpg"
-import  { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
+import BackgroundImage from "../../assets/global-communication-background-business-network-design.jpg";
 
-
+// Animação de pulsação
 const pulse = keyframes`
   0%, 100% {
     transform: scale(0.9);
@@ -11,238 +10,206 @@ const pulse = keyframes`
   20% {
     transform: scale(1);
     opacity: 1;
-    
   }
-`
+`;
 
-
+// Container principal
 export const MainDiv = styled.main`
-    background: url('${BackgroundImage}');
-    display: flex;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
- 
-`
+  background: url('${BackgroundImage}') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+`;
 
+// Container central
 export const Container = styled.div`
-    width: 37vh;
-    height: 40vh; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 100px;
-    flex-direction: column;
-    background: white;
-    border-radius: 5px;
-`
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+`;
 
-
-
+// Logo com animação
 export const Logo = styled.div`
-    img{
-        animation: ${pulse} 3.5s infinite;
-        margin-top: 40px;
-        max-width: 100%;
-        height: 50px;
-    }
+  img {
+    animation: ${pulse} 3.5s infinite;
+    margin-top: 2rem;
+    max-width: 100%;
+    height: auto;
+  }
 
-    @media (max-height: 800px){
-        img{
-            margin-top: 90px;
-            height: 30px;
-        }    
+  @media (max-height: 800px) {
+    img {
+      margin-top: 1.5rem;
+      height: 40px;
     }
-`
+  }
+`;
 
+// Texto estilizado
 export const Text = styled.div`
-    font-size: 15px;
-    color: #fff;
-    font-weight: bold;
-    margin: 0;
-    text-align: center; 
+  font-size: 1rem;
+  color: black;
+  font-weight: bold;
+  text-align: center;
 
-    
-    @media (max-height: 800px){
-        p{
-            margin-top: 10px;
-            font-size: 12px;
-        }    
-    }
-`
+  p {
+    margin-top: 0.5rem;
+  }
 
+  @media (max-height: 800px) {
+    font-size: 0.8rem;
+  }
+`;
+
+// Formulário
 export const Form = styled.div`
-    width: 90%; 
-    margin-bottom: 60px;
-    justify-content: center;
-    flex-direction: column;
+  width: 100%;
+  margin-top: 1.5rem;
 
-    p{
-        margin-bottom: 10px;
-        font-size: 14px;
-        line-height: 80%;
-        color: red;
-        font-weight: 900;
-        text-decoration: none;
-    }
-`
+  p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: red;
+    font-weight: bold;
+  }
+`;
 
+// Inputs
 export const InputContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
+  input {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 10px 35px;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #f2f2f2;
+    color: #555;
+    font-size: 1rem;
 
+    &::placeholder {
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  }
 
+  @media (max-width: 500px) {
     input {
-        
-        width: 80%;
-        height: 35px;
-        border: none;
-        border-radius: 15px;
-        padding: 15px;
-        background: #F2F2F2;
-        color: gray;
-        font-size: 12px;
-        outline: none;
-        box-sizing: border-box;
-
-
-        &::placeholder {
-            color: gray;
-            font-size: 10px;
-            font-weight: 800;
-        }
+      font-size: 0.8rem;
+      height: 2rem;
     }
 
     label {
-        color: black;
-        margin-bottom: 10px;
-        font-weight: 800;
+      font-size: 0.8rem;
     }
+  }
+`;
 
-    @media (max-height: 800px){
-
-        input{
-            width: 80%;
-            height: 10px;
-        }
-
-        label{
-            font-size: 10px;
-        }    
-    }
-
-`
-
+// Botão principal
 export const Button = styled.button`
-    width: 80%;
-    font-weight: bold;
-    height: 35px;
-    border: none;
-    border-radius: 15px;
-    color: #fff;
-    font-size: 17px;
-    outline: none;
-    background-color: #2E7EBB;
-    margin: 10px 35px;
-  
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #2e7ebb;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
 
-    &:hover{
-        text-decoration: underline;
-    }
+  &:hover {
+    background-color: #246598;
+    cursor: pointer;
+  }
 
-    @media (max-height: 800px){
-        width: 80%;
-        height: 25px;
-    }
-`
+  @media (max-width: 500px) {
+    font-size: 0.9rem;
+    height: 2.2rem;
+  }
+`;
 
+// Banner
 export const ContainerBanner = styled.div`
- 
-    width: 37vh;
-    height: 40vh; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 100px;
-    flex-direction: column;
-    background: linear-gradient(to bottom, rgba(33, 81, 143), rgba(7, 90, 86), rgba(9, 66, 94));
-    border-radius: 5px;
+  width: 90%;
+  max-width: 400px;
+  height: 30.6rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom, #21518f, #075a56, #09425e);
 
-        h1{
-            color: white;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 40px;
-            font-size: 38px;
 
-        }
-
-        div{
-            margin-top: 70px;
-            justify-content: center; 
-            align-items: center; 
-            height: 100%; 
-        }
-        
-        button{
-            width: 35%;
-            font-weight: 300;
-            height: 35px;
-            border: 1px solid white;
-            border-radius: 15px;
-            color: white;
-            font-size: 17px;
-            outline: none;
-            background: linear-gradient(to bottom, rgba(33, 81, 143, 0.1), rgba(7, 90, 86, 0.1), rgba(9, 66, 94, 0.1));
-            margin: 10px 33%;
-            
-            &:hover{
-                text-decoration: underline;
-            }
-            
-        }
-
-        @media (max-height: 800px){
-            h1{
-                font-size: 20px;
-            }
-
-            button{
-                height: 25px;
-                font-size: 13px;
-            }
-        }
-
-        @media (max-width: 500px){
-            display: none;
-        }
-    
-`
-
-export const ForgotPassword = styled.div`
-    margin-top: 10px;
+  h1 {
+    margin-top: 5rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
+  }
 
-    &:hover{
-        cursor: pointer;
-        text-decoration: underline;
-    }
+  button {
+    margin-top: 5rem;
+    margin-left: 4.5rem;
+    width: 60%;
+    height: 2.5rem;
+    border: 1px solid white;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
 
-    @media (max-height: 800px){
-        font-size: 12px;
-        margin-bottom: 25px;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
     }
-`
+  }
+
+  @media (max-width: 500px) {
+    display: none;
+  }
+`;
+
+// Esqueceu a senha
+export const ForgotPassword = styled.div`
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  @media (max-height: 800px) {
+    margin-bottom: 1.5rem;
+  }
+`;
