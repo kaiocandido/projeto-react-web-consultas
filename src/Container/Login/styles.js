@@ -196,6 +196,10 @@ export const ContainerBanner = styled.div`
     }
   }
 
+  @media (max-width: 1900px) {
+    height: 29rem
+  }
+
   @media (max-width: 500px) {
     display: none;
   }
