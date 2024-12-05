@@ -173,6 +173,7 @@ export const ContainerBanner = styled.div`
     font-size: 2rem;
     margin-bottom: 1.5rem;
     text-align: center;
+    color: #fff;
   }
 
   button {
