@@ -152,10 +152,14 @@ export const InputContainer = styled.div`
 // Botão principal
 
 export const ContainerButton = styled.div`
+  
+  @media (max-width: 500px) {
+    margin-bottom: 20px;
+  }
+
   width: 70%;
   display: flex;
   gap: 80px
-  
   
 `
 

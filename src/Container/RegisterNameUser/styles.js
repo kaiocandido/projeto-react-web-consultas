@@ -172,6 +172,12 @@ export const Button = styled.button`
     font-size: 0.9rem;
     height: 2.2rem;
   }
+
+  @media (max-width: 400px) {
+    font-size: 0.9rem;
+    height: 2.2rem;
+    width: 50%;
+  }
 `
 
 
