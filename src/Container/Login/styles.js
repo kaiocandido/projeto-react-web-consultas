@@ -1,17 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import BackgroundImage from "../../assets/global-communication-background-business-network-design.jpg";
 
-// Animação de pulsação
-const pulse = keyframes`
-  0%, 100% {
-    transform: scale(0.9);
-    opacity: 1;
-  }
-  20% {
-    transform: scale(1);
-    opacity: 1;
-  }
-`
 
 // Container principal
 export const MainDiv = styled.main`
@@ -46,7 +35,6 @@ export const Container = styled.div`
 // Logo com animação
 export const Logo = styled.div`
   img {
-    animation: ${pulse} 3.5s infinite;
     margin-top: 2rem;
     max-width: 100%;
     height: auto;
