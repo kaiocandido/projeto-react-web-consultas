@@ -1,17 +1,5 @@
-import styled, { keyframes } from "styled-components";
 import BackgroundImage from "../../assets/global-communication-background-business-network-design.jpg";
-
-// Animação de pulsação
-const pulse = keyframes`
-  0%, 100% {
-    transform: scale(0.9);
-    opacity: 1;
-  }
-  20% {
-    transform: scale(1);
-    opacity: 1;
-  }
-`
+import styled from "styled-components";
 
 // Container principal
 export const MainDiv = styled.main`
@@ -46,7 +34,6 @@ export const Container = styled.div`
 // Logo com animação
 export const Logo = styled.div`
   img {
-    animation: ${pulse} 3.5s infinite;
     margin-top: 2rem;
     max-width: 100%;
     height: auto;
@@ -86,6 +73,27 @@ export const Form = styled.div`
     font-size: 0.9rem;
     color: red;
     font-weight: bold;
+  }
+
+  .ReCAPTCHA{
+    margin-top: 10px;
+    margin-left: 15px;
+  }
+
+  @media (max-width: 400px){
+    .ReCAPTCHA{
+        margin-left: -20px;
+        transform: scale(0.7);
+        
+    }}
+
+    
+  @media (max-width: 290px){
+    .ReCAPTCHA{
+        margin-right: 100px; 
+        transform: scale(0.6);
+        
+    }
   }
 `
 
@@ -157,7 +165,7 @@ export const Button = styled.button`
 export const ContainerBanner = styled.div`
   width: 90%;
   max-width: 400px;
-  height: 30.6rem;
+  height: 39.2rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -168,8 +176,7 @@ export const ContainerBanner = styled.div`
   border-bottom-right-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background: linear-gradient(to bottom, #21518f, #075a56, #09425e);
-
-
+  
   h1 {
     margin-top: 5rem;
     font-size: 2rem;
@@ -196,27 +203,13 @@ export const ContainerBanner = styled.div`
     }
   }
 
-  @media (max-width: 1900px) {
-    height: 29rem
-  }
+  
+    @media (max-width: 1600px) {
+        height: 36rem;
+    }
 
-  @media (max-width: 500px) {
-    display: none;
-  }
+    @media (max-width: 907px) {
+        display: none;
+    }
 `
 
-// Esqueceu a senha
-export const ForgotPassword = styled.div`
-  margin-top: 1rem;
-  text-align: center;
-  font-size: 0.8rem;
-
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-
-  @media (max-height: 800px) {
-    margin-bottom: 1.5rem;
-  }
-`
