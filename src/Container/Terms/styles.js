@@ -18,7 +18,7 @@ export const MainDiv = styled.main`
 export const Container = styled.div`
   width: 800px;
   height: auto;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,6 +32,11 @@ export const Container = styled.div`
   }
   @media (max-width: 900px) {
     width: 400px;
+  }
+
+  @media (max-width: 1600px) {
+    width: 400px;
+    height: 42rem;
   }
 `
 
@@ -47,7 +52,7 @@ export const Logo = styled.div`
   }
 
   @media (max-width: 1600px) {
-      margin-left: 50px;
+      margin-right: 340px;
       height: auto;
   }
 
@@ -147,7 +152,7 @@ export const InputContainer = styled.div`
 // Botão principal
 
 export const ContainerButton = styled.div`
-  width: 50%;
+  width: 70%;
   display: flex;
   gap: 80px
   
@@ -161,7 +166,7 @@ export const Button = styled.button`
   border-radius: 8px;
   background-color: #2e7ebb;
   color: white;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
   margin-top: 1rem;
 
@@ -176,65 +181,6 @@ export const Button = styled.button`
   }
 `
 
-
-
-// Banner
-export const ContainerBanner = styled.div`
-  width: 90%;
-  max-width: 400px;
-  height: 36rem;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to bottom, #21518f, #075a56, #09425e);
-  
-  h1 {
-    margin-top: 5rem;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    color: #fff;
-  }
-
-  button {
-    margin-top: 5rem;
-    margin-left: 4.5rem;
-    width: 60%;
-    height: 2.5rem;
-    border: 1px solid white;
-    border-radius: 8px;
-    background: transparent;
-    color: white;
-    font-size: 1rem;
-    font-weight: 300;
-
-
-    &:hover {
-      text-decoration: underline;
-      cursor: pointer;
-    }
-  }
-
-  
-    @media (max-width: 1600px) {
-        height: 35rem;
-    }
-
-    @media (max-width: 1591px) {
-        height: 35.7rem;
-    }
-
-
-    @media (max-width: 907px) {
-        display: none;
-    }
-`
 export const ContainerCheckbox = styled.div`
     margin-bottom: 7rem;
     p{
@@ -261,5 +207,72 @@ export const ContainerCheckbox = styled.div`
       font-size: 14px;
     }
 
+    @media (max-width: 1601px) {
+      margin-bottom: 0px;
+
+      p{
+      font-size: 16px;
+      font-weight: 600px;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+    }
+
+    .toggle-switch{
+    }
+
+    .toggle-switch label{
+      margin-left: 1rem;
+      font-size: 14px;
+    }
+
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    }
+
+`
+
+// Banner
+export const ContainerBanner = styled.div`
+  width: 90%;
+  max-width: 400px;
+  height: 47.7rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom, #21518f, #075a56, #09425e);
+
+
+  h1 {
+    margin-top: 5rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #fff;
+  }
+
+  @media (max-width: 1900px) {
+    height: 29rem
+  }
+
+  @media (max-width: 500px) {
+    display: none;
+  }
+
+  @media (max-width: 1600px) {
+    width: 400px;
+    height: 42rem;
+  }
 
 `

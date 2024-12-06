@@ -1,6 +1,7 @@
 import {
     Button,
     Container,
+    ContainerBanner,
     ContainerButton,
     ContainerCheckbox,
     Logo,
@@ -61,6 +62,11 @@ import {
             <Button type="submit">Finish</Button>
           </ContainerButton>
         </Container>
+        <ContainerBanner>
+            <div>
+                <h1>Welcome to the Blockbit Hub</h1>
+            </div>
+        </ContainerBanner>
       </MainDiv>
     )
   }
