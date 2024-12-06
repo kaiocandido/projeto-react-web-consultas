@@ -58,7 +58,7 @@ export function RegisterNameUser() {
           </InputContainer>
         </Form>
         <ContainerButton>
-          <Button type="submit">To Go Back</Button>
+          <Button type="submit">Back</Button>
           <Button type="submit">Next</Button>
         </ContainerButton>
       </Container>

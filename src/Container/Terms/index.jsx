@@ -58,7 +58,7 @@ import {
                 </div>   
             </ContainerCheckbox>        
           <ContainerButton>
-            <Button type="submit">To Go Back</Button>
+            <Button type="submit">Back</Button>
             <Button type="submit">Finish</Button>
           </ContainerButton>
         </Container>
