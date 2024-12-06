@@ -152,11 +152,6 @@ export const InputContainer = styled.div`
 // Botão principal
 
 export const ContainerButton = styled.div`
-  
-  @media (max-width: 500px) {
-    margin-bottom: 20px;
-  }
-
   width: 70%;
   display: flex;
   gap: 80px
@@ -179,9 +174,10 @@ export const Button = styled.button`
     cursor: pointer;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 420px) {
     font-size: 0.9rem;
-    height: 2.2rem;
+    height: 1rem;
+    font-size: 0.5rem;
   }
 `
 
