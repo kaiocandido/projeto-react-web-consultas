@@ -121,7 +121,7 @@ export const InputContainer = styled.div`
 export const ContainerBanner = styled.div`
   width: 90%;
   max-width: 400px;
-  height: 30.6rem;
+  height: 31.6rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -161,7 +161,7 @@ export const ContainerBanner = styled.div`
   }
 
   @media (max-width: 1900px) {
-    height: 29rem
+    height: 30rem
   }
 
   @media (max-width: 500px) {

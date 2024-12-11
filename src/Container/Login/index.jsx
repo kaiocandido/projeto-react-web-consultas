@@ -12,13 +12,13 @@ import LogoBlack from "../../assets/logo-blockbit@2x 1.png";
 import { ContainerButton } from "../../components/Button/styles";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import * as Yup from "yup";
 
 export function Login() {
 
-    const schema = yup.object({
-        email: yup.string().email("Invalid email format").required("Email is required"),
-        password: yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+    const schema = Yup.object({
+        email: Yup.string().email("Invalid email format").required("Email is required"),
+        password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
     }).required();
    
     
@@ -45,10 +45,12 @@ export function Login() {
                     <InputContainer>
                         <label>EMAIL</label>
                         <input type="email" {...register("email")} placeholder="E-mail"/>
+                        <p>{errors.email?.message}</p>
                     </InputContainer>
                     <InputContainer>
                         <label>PASSWORD</label>
                         <input type="password" {...register("password")} placeholder="Password" />
+                        <p>{errors.password?.message}</p>
                     </InputContainer>
                     <ContainerButton type="submit">Log in</ContainerButton>
                     <ForgotPassword>
