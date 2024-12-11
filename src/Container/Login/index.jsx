@@ -1,33 +1,60 @@
-import { Button, Container, ContainerBanner, ForgotPassword, Form, InputContainer,Logo, MainDiv, Text } from "./styles"
-import LogoBlack from "../../assets/logo-blockbit@2x 1.png"
+import { 
+    Container, 
+    ContainerBanner, 
+    ForgotPassword, 
+    Form, 
+    InputContainer, 
+    Logo, 
+    MainDiv, 
+    Text 
+} from "./styles";
+import LogoBlack from "../../assets/logo-blockbit@2x 1.png";
+import { ContainerButton } from "../../components/Button/styles";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
-export function Login(){
-    return(
+export function Login() {
 
+    const schema = yup.object({
+        email: yup.string().email("Invalid email format").required("Email is required"),
+        password: yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+    }).required();
+   
+    
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({
+        resolver: yupResolver(schema),
+    })
+
+    const onSubmit = data => console.log(data)
+
+    return (
         <MainDiv>
             <Container>
                 <Logo>
-                    <img src={LogoBlack} alt="Logo Blockbit Hub"></img>
+                    <img src={LogoBlack} alt="Logo Blockbit Hub" />
                 </Logo>
                 <Text>
                     <p>Login in Hub</p>
                 </Text>
-                <Form>
+                <Form onSubmit={handleSubmit(onSubmit)}>
                     <InputContainer>
-                        <label>E-MAIL</label>
-                        <input type="email"  placeholder="E-mail" />
+                        <label>EMAIL</label>
+                        <input type="email" {...register("email")} placeholder="E-mail"/>
                     </InputContainer>
                     <InputContainer>
                         <label>PASSWORD</label>
-                        <input type="password" placeholder="Password" />
+                        <input type="password" {...register("password")} placeholder="Password" />
                     </InputContainer>
-                    <Button type="submit">Log in</Button>
-
+                    <ContainerButton type="submit">Log in</ContainerButton>
                     <ForgotPassword>
-                        <a>Forgot Password</a>
+                        <a href="#">Forgot Password</a>
                     </ForgotPassword>
                 </Form>
-
             </Container>
             <ContainerBanner>
                 <div>
@@ -36,7 +63,7 @@ export function Login(){
                 </div>
             </ContainerBanner>
         </MainDiv>
-    )
+    );
 }
 
-export default Login
+export default Login;
