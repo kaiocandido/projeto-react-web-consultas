@@ -1,15 +1,14 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import GlobalStyles from '../src/Styles/GlobalStyles';
-import Login from "../src/Container/Login"
-//import Home from "../src/Container/Home"
-//import Register from './Container/Register';
-//import RegisterNameUser from "./Container/RegisterNameUser"
-//import Terms from "./Container/Terms"
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import GlobalStyles from './Styles/GlobalStyles';
+import { ToastContainer } from 'react-toastify';
+import { RouterProvider } from 'react-router-dom'
+import { router } from './routes'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <GlobalStyles/>
-    <Login/>
-  </StrictMode>,
-)
+    <RouterProvider router={router} />
+    <GlobalStyles />
+    <ToastContainer autoClose={2000} theme="colored" />
+  </StrictMode>
+);
