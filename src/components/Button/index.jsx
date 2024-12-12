@@ -1,7 +1,7 @@
 import { ContainerButton } from "./styles";
 import PropTypes from "prop-types";
 
-export function Button({ children, ...props }) {
+export default function Button({ children, ...props }) {
     return (
         <ContainerButton {...props}>{children}</ContainerButton>
     );
@@ -10,3 +10,4 @@ export function Button({ children, ...props }) {
 Button.propTypes = {
     children: PropTypes.string,
 };
+

@@ -9,7 +9,7 @@ import {
     Text 
 } from "./styles";
 import LogoBlack from "../../assets/logo-blockbit@2x 1.png";
-import { ContainerButton } from "../../components/Button/styles";
+import  ContainerButton  from "../../components/Button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
@@ -30,7 +30,9 @@ export function Login() {
         resolver: yupResolver(schema),
     })
 
-    const onSubmit = data => console.log(data)
+    const onSubmit = (data) => {
+        console.log(data)
+       }
 
     return (
         <MainDiv>
@@ -44,7 +46,7 @@ export function Login() {
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <InputContainer>
                         <label>EMAIL</label>
-                        <input type="email" {...register("email")} placeholder="E-mail"/>
+                        <input type="email" {...register("email")} placeholder="E-mail" />
                         <p>{errors.email?.message}</p>
                     </InputContainer>
                     <InputContainer>

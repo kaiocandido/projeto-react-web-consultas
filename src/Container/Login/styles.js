@@ -65,7 +65,7 @@ export const Text = styled.div`
 `
 
 // Formulário
-export const Form = styled.div`
+export const Form = styled.form`
   width: 100%;
   margin-top: 1.5rem;
 
@@ -83,6 +83,15 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+
+  p{
+    color: red;
+    font-size: 14px;
+    line-height: 80%;
+    font-weight: 600;
+    margin-top: 5px;
+    height: 10px;
+  }
 
   label {
     margin-bottom: 0.5rem;
@@ -104,6 +113,7 @@ export const InputContainer = styled.div`
       color: #aaa;
       font-size: 0.9rem;
     }
+
   }
 
   @media (max-width: 500px) {
@@ -121,7 +131,7 @@ export const InputContainer = styled.div`
 export const ContainerBanner = styled.div`
   width: 90%;
   max-width: 400px;
-  height: 31.6rem;
+  height: 33.3rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -161,7 +171,7 @@ export const ContainerBanner = styled.div`
   }
 
   @media (max-width: 1900px) {
-    height: 30rem
+    height: 33rem
   }
 
   @media (max-width: 500px) {
