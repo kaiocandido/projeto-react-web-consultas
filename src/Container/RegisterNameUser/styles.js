@@ -41,20 +41,19 @@ export const Logo = styled.div`
     margin-bottom: 1rem;
     max-width: 25%;
     height: auto;
-    margin-left: 270px;
+    margin-left: 280px;
   }
 
   @media (max-width: 1600px) {
-      margin-left: 50px;
       height: auto;
   }
 
-  @media (max-width: 1026px) {
+  @media (max-width: 1226px) {
     margin-right: 200px;
   }
 
-  @media (max-width: 900px) {
-    margin-right: 360px;
+  @media (max-width: 920px) {
+    margin-right: 400px;
   }
 
 
@@ -77,7 +76,7 @@ export const Text = styled.div`
 `
 
 // Formulário
-export const Form = styled.div`
+export const Form = styled.form`
   width: 100%;
   margin-top: 1.5rem;
   display: grid;
@@ -107,6 +106,15 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+
+  p{
+    color: red;
+    font-size: 14px;
+    line-height: 80%;
+    font-weight: 600;
+    margin-top: 5px;
+    height: 10px;
+  }
 
   label {
     margin-bottom: 0.5rem;
@@ -142,18 +150,8 @@ export const InputContainer = styled.div`
   }
 `
 
-// Botão principal
-
-export const ContainerButton = styled.div`
-  width: 50%;
-  display: flex;
-  gap: 80px
-  
-  
-`
-
 export const Button = styled.button`
-  width: 40%;
+  width: 50%;
   height: 2.5rem;
   border: none;
   border-radius: 8px;
@@ -161,7 +159,9 @@ export const Button = styled.button`
   color: white;
   font-size: 1rem;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-left: 70px;
+  
+  
 
   &:hover {
     background-color: #246598;

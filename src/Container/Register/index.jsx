@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import {
   Button,
   Container,
@@ -9,9 +9,14 @@ import {
   MainDiv,
   Text,
 } from "./styles";
-import LogoBlack from "../../assets/logo-blockbit@2x 1.png"
-import ReCAPTCHA from "react-google-recaptcha"
+import LogoBlack from "../../assets/logo-blockbit@2x 1.png";
+import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
+import * as Yup from 'yup';
+import { yupResolver } from "@hookform/resolvers/yup";
+import { api } from "../../services/api";
+import {  toast } from 'react-toastify';
+import { useForm } from "react-hook-form";
 
 export function Register() {
     const navigate = useNavigate();
@@ -23,29 +28,56 @@ export function Register() {
       setCaptchaValue(value)
     };
   
-    // Função para enviar o formulário
-    const handleSubmit = (e) => {
-      e.preventDefault()
-
-      if (!captchaValue) {
-        alert("Por favor, resolva o CAPTCHA.")
-        return;
-      }
-  
-      alert("Formulário enviado com sucesso!")
-      // Se tivesse backend, você enviaria o token de captcha para validação.
-    }
-
-
     // Função para redirecionar ao clicar no botão "Register"
     const handleRegisterClick = () => {
       navigate("/");
     };
 
     // Função para redirecionar ao clicar no botão "infos"
-    const handleRegisterClickNext = () => {
+    /*const handleRegisterClickNext = () => {
       navigate("/infos");
-    };
+    };*/
+
+
+  //validando schema
+  const schema = Yup.object({
+    email: Yup.string().email("Invalid email format").required("Email is required"),
+    password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+    confirmPassword: Yup.string().oneOf([Yup.ref('password')], 'Passwords must be the same').required('Confirm your password'),
+  }).required();
+ 
+  //validando erros no schema
+  const {
+      register,
+      handleSubmit,
+      formState: { errors },
+  } = useForm({
+      resolver: yupResolver(schema),
+  });
+
+  //conexão com banco de dados para enviar as sessões
+  const onSubmit = async (data) => {
+    try {
+      
+      const {status} = await api.post('/users',{
+        email: data.email,
+        password: data.password,
+      },{
+        validateStatus: () =>true,
+
+      });
+    
+      if( status === 200 || status ===201){
+        toast.success('Account created successfully')
+      }else if(status === 409 ){
+        toast.error('The email already exists in the system! Log in to continue')
+      }else{
+        throw new Error()
+      }
+    } catch (error) {
+      toast.error('System failure, please try again!')
+    }};
+
 
     
   return (
@@ -57,21 +89,24 @@ export function Register() {
         <Text>
           <p>Register in Hub</p>
         </Text>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit(onSubmit)}>
           <InputContainer>
             <label>E-mail</label>
-            <input type="email" placeholder="E-mail" />
+            <input type="email" {...register("emailss")}  placeholder="E-mail" />
+            <p>{errors.email?.message}</p>
           </InputContainer>
           <InputContainer>
             <label>Password</label>
-            <input type="password" placeholder="Password" />
+            <input type="password" {...register("password")}  placeholder="Password" />
+            <p>{errors.password?.message}</p>
           </InputContainer>
           <InputContainer>
             <label>Confirm Password</label>
-            <input type="password" placeholder="Confirm Password" />
+            <input type="password" {...register("confirmPassword")} placeholder="Confirm Password" />
+            <p>{errors.confirmPassword?.message}</p>
           </InputContainer>
 
-          <Button type="submit" onClick={handleRegisterClickNext}>Next</Button>
+          <Button type="submit">Next</Button>
 
           <ReCAPTCHA className="ReCAPTCHA"
             sitekey="6LdzLpQqAAAAAJttPibKZLKWDtPwdhBjwg5Mlht9" // Substitua pela sua Site Key
