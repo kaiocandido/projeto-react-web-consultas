@@ -11,8 +11,10 @@ import {
 } from "./styles";
 import LogoBlack from "../../assets/logo-blockbit@2x 1.png"
 import ReCAPTCHA from "react-google-recaptcha"
+import { useNavigate } from "react-router-dom";
 
 export function Register() {
+    const navigate = useNavigate();
     const [captchaValue, setCaptchaValue] = useState(null)
 
     // Função para lidar com a mudança do valor do CAPTCHA
@@ -34,6 +36,18 @@ export function Register() {
       // Se tivesse backend, você enviaria o token de captcha para validação.
     }
 
+
+    // Função para redirecionar ao clicar no botão "Register"
+    const handleRegisterClick = () => {
+      navigate("/");
+    };
+
+    // Função para redirecionar ao clicar no botão "infos"
+    const handleRegisterClickNext = () => {
+      navigate("/infos");
+    };
+
+    
   return (
     <MainDiv>
       <Container>
@@ -57,7 +71,7 @@ export function Register() {
             <input type="password" placeholder="Confirm Password" />
           </InputContainer>
 
-          <Button type="submit">Next</Button>
+          <Button type="submit" onClick={handleRegisterClickNext}>Next</Button>
 
           <ReCAPTCHA className="ReCAPTCHA"
             sitekey="6LdzLpQqAAAAAJttPibKZLKWDtPwdhBjwg5Mlht9" // Substitua pela sua Site Key
@@ -68,7 +82,7 @@ export function Register() {
       <ContainerBanner>
         <div>
           <h1>Register on Blockbit Hub</h1>
-          <button>Login</button>
+          <button onClick={handleRegisterClick}>Login</button>
         </div>
       </ContainerBanner>
     </MainDiv>

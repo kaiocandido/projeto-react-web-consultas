@@ -15,8 +15,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { api } from "../../services/api";
 import {  toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 export function Login() {
+    const navigate = useNavigate();
     //validando schema
     const schema = Yup.object({
         email: Yup.string().email("Invalid email format").required("Email is required"),
@@ -46,6 +48,11 @@ export function Login() {
             },
         )}
 
+
+    // Função para redirecionar ao clicar no botão "Register"
+    const handleRegisterClick = () => {
+        navigate("/register");
+    };
 
 
     return (
@@ -77,7 +84,7 @@ export function Login() {
             <ContainerBanner>
                 <div>
                     <h1>Welcome to the Blockbit Hub</h1>
-                    <button>Register</button>
+                    <button onClick={handleRegisterClick}>Register</button>
                 </div>
             </ContainerBanner>
         </MainDiv>

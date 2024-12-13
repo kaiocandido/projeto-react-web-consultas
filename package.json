@@ -10,8 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/react": "^3.2.3",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@hookform/resolvers": "^3.9.1",
     "axios": "^1.7.9",
+    "framer-motion": "^11.14.3",
     "keyframes": "^2.3.0",
     "lint": "^0.8.19",
     "prop-types": "^15.8.1",

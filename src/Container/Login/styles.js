@@ -171,7 +171,7 @@ export const ContainerBanner = styled.div`
   }
 
   @media (max-width: 1900px) {
-    height: 33rem
+    height: 32rem;
   }
 
   @media (max-width: 500px) {

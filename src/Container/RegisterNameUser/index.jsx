@@ -10,9 +10,20 @@ import {
 } from "./styles"
 
 import LogoBlack from "../../assets/logo-blockbit@2x 1.png"
-
+import { useNavigate } from "react-router-dom";
 
 export function RegisterNameUser() {
+  const navigate = useNavigate()
+  // Função para redirecionar ao clicar no botão "Register"
+
+  const handleRegisterClick = () => {
+    navigate("/register");
+  };
+
+  const handleRegisterClickNext = () => {
+    navigate("/terms");
+  };
+
 
   return (
     <MainDiv>
@@ -58,8 +69,8 @@ export function RegisterNameUser() {
           </InputContainer>
         </Form>
         <ContainerButton>
-          <Button type="submit">Back</Button>
-          <Button type="submit">Next</Button>
+          <Button type="submit" onClick={handleRegisterClick}>Back</Button>
+          <Button type="submit" onClick={handleRegisterClickNext}>Next</Button>
         </ContainerButton>
       </Container>
     </MainDiv>
