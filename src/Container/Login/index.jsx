@@ -19,13 +19,12 @@ import { useNavigate } from "react-router-dom";
 
 export function Login() {
     const navigate = useNavigate();
-    //validando schema
+
     const schema = Yup.object({
         email: Yup.string().email("Invalid email format").required("Email is required"),
         password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
     }).required();
    
-    //validando erros no schema
     const {
         register,
         handleSubmit,
@@ -34,7 +33,6 @@ export function Login() {
         resolver: yupResolver(schema),
     });
 
-    //conexão com banco de dados para enviar as sessões
     const onSubmit = async (data) => {
         const response = await toast.promise(
             api.post('/session',{
@@ -46,14 +44,11 @@ export function Login() {
                 success: 'Welcome',
                 error: 'Check Your Entered Data'
             },
-        )}
+        )};
 
-
-    // Função para redirecionar ao clicar no botão "Register"
     const handleRegisterClick = () => {
         navigate("/register");
     };
-
 
     return (
         <MainDiv>
@@ -89,6 +84,6 @@ export function Login() {
             </ContainerBanner>
         </MainDiv>
     );
-}
+};
 
 export default Login;

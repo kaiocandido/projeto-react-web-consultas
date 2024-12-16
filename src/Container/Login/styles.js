@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import BackgroundImage from "../../assets/global-communication-background-business-network-design.jpg";
 
-
 // Container principal
 export const MainDiv = styled.main`
   background: url('${BackgroundImage}') no-repeat center center/cover;
@@ -29,23 +28,24 @@ export const Container = styled.div`
 
   @media (max-width: 768px) {
     padding: 1.5rem;
-  }
+  };
 `
 
 // Logo com animação
 export const Logo = styled.div`
+
   img {
     margin-top: 2rem;
     max-width: 100%;
     height: auto;
-  }
+  };
 
   @media (max-height: 800px) {
     img {
       margin-top: 1.5rem;
       height: 40px;
-    }
-  }
+    };
+  };
 `
 
 // Texto estilizado
@@ -57,11 +57,11 @@ export const Text = styled.div`
 
   p {
     margin-top: 0.5rem;
-  }
+  };
 
   @media (max-height: 800px) {
     font-size: 0.8rem;
-  }
+  };
 `
 
 // Formulário
@@ -74,7 +74,7 @@ export const Form = styled.form`
     font-size: 0.9rem;
     color: red;
     font-weight: bold;
-  }
+  };
 `
 
 // Inputs
@@ -91,13 +91,13 @@ export const InputContainer = styled.div`
     font-weight: 600;
     margin-top: 5px;
     height: 10px;
-  }
+  };
 
   label {
     margin-bottom: 0.5rem;
     font-weight: bold;
     font-size: 0.9rem;
-  }
+  };
 
   input {
     width: 100%;
@@ -112,7 +112,7 @@ export const InputContainer = styled.div`
     &::placeholder {
       color: #aaa;
       font-size: 0.9rem;
-    }
+    };
 
   }
 
@@ -120,13 +120,14 @@ export const InputContainer = styled.div`
     input {
       font-size: 0.8rem;
       height: 2rem;
-    }
+    };
 
     label {
       font-size: 0.8rem;
-    }
+    };
   }
 `
+
 // Banner
 export const ContainerBanner = styled.div`
   width: 90%;
@@ -143,14 +144,13 @@ export const ContainerBanner = styled.div`
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background: linear-gradient(to bottom, #21518f, #075a56, #09425e);
 
-
   h1 {
     margin-top: 5rem;
     font-size: 2rem;
     margin-bottom: 1.5rem;
     text-align: center;
     color: #fff;
-  }
+  };
 
   button {
     margin-top: 5rem;
@@ -167,16 +167,16 @@ export const ContainerBanner = styled.div`
     &:hover {
       text-decoration: underline;
       cursor: pointer;
-    }
-  }
+    };
+  };
 
   @media (max-width: 1900px) {
     height: 32rem;
-  }
+  };
 
   @media (max-width: 500px) {
     display: none;
-  }
+  };
 `
 
 // Esqueceu a senha
@@ -188,9 +188,9 @@ export const ForgotPassword = styled.div`
   &:hover {
     cursor: pointer;
     text-decoration: underline;
-  }
+  };
 
   @media (max-height: 800px) {
     margin-bottom: 1.5rem;
-  }
+  };
 `

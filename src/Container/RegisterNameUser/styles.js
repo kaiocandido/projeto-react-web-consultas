@@ -27,10 +27,10 @@ export const Container = styled.div`
 
   @media (max-width: 768px) {
     padding: 1.5rem;
-  }
+  };
   @media (max-width: 900px) {
     width: 400px;
-  }
+  };
 `
 
 // Logo com animação
@@ -42,21 +42,19 @@ export const Logo = styled.div`
     max-width: 25%;
     height: auto;
     margin-left: 280px;
-  }
+  };
 
   @media (max-width: 1600px) {
       height: auto;
-  }
+  };
 
   @media (max-width: 1226px) {
     margin-right: 200px;
-  }
+  };
 
   @media (max-width: 920px) {
     margin-right: 400px;
-  }
-
-
+  };
 `
 
 // Texto estilizado
@@ -68,11 +66,11 @@ export const Text = styled.div`
 
   p {
     margin-bottom: 0.8rem;
-  }
+  };
 
   @media (max-height: 800px) {
     font-size: 0.8rem;
-  }
+  };
 `
 
 // Formulário
@@ -89,7 +87,7 @@ export const Form = styled.form`
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
     font-weight: bold;
-  }
+  };
 
   @media (max-width: 900px) {
     display: grid;
@@ -97,7 +95,7 @@ export const Form = styled.form`
     gap: 10px; 
     max-width: 400px;
     margin: 0 auto;
-  }
+  };
 `
 
 // Inputs
@@ -114,13 +112,13 @@ export const InputContainer = styled.div`
     font-weight: 600;
     margin-top: 5px;
     height: 10px;
-  }
+  };
 
   label {
     margin-bottom: 0.5rem;
     font-weight: bold;
     font-size: 0.9rem;
-  }
+  };
 
   input {
     width: 100%;
@@ -135,19 +133,19 @@ export const InputContainer = styled.div`
     &::placeholder {
       color: #aaa;
       font-size: 0.9rem;
-    }
-  }
+    };
+  };
 
   @media (max-width: 500px) {
     input {
       font-size: 0.8rem;
       height: 2rem;
-    }
+    };
 
     label {
       font-size: 0.8rem;
-    }
-  }
+    };
+  };
 `
 
 export const Button = styled.button`
@@ -161,26 +159,22 @@ export const Button = styled.button`
   font-weight: bold;
   margin-left: 70px;
   
-  
-
   &:hover {
     background-color: #246598;
     cursor: pointer;
-  }
+  };
 
   @media (max-width: 500px) {
     font-size: 0.9rem;
     height: 2.2rem;
-  }
+  };
 
   @media (max-width: 400px) {
     font-size: 0.9rem;
     height: 2.2rem;
     width: 50%;
-  }
+  };
 `
-
-
 
 // Banner
 export const ContainerBanner = styled.div`
@@ -204,7 +198,7 @@ export const ContainerBanner = styled.div`
     margin-bottom: 1.5rem;
     text-align: center;
     color: #fff;
-  }
+  };
 
   button {
     margin-top: 5rem;
@@ -218,24 +212,21 @@ export const ContainerBanner = styled.div`
     font-size: 1rem;
     font-weight: 300;
 
-
     &:hover {
       text-decoration: underline;
       cursor: pointer;
-    }
-  }
-
+    };
+  };
   
     @media (max-width: 1600px) {
         height: 35rem;
-    }
+    };
 
     @media (max-width: 1591px) {
         height: 35.7rem;
-    }
-
+    };
 
     @media (max-width: 907px) {
         display: none;
-    }
+    };
 `

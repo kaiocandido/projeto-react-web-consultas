@@ -28,7 +28,7 @@ export const Container = styled.div`
 
   @media (max-width: 768px) {
     padding: 1.5rem;
-  }
+  };
 `
 
 // Logo com animação
@@ -37,14 +37,14 @@ export const Logo = styled.div`
     margin-top: 2rem;
     max-width: 100%;
     height: auto;
-  }
+  };
 
   @media (max-height: 800px) {
     img {
       margin-top: 1.5rem;
       height: 40px;
-    }
-  }
+    };
+  };
 `
 
 // Texto estilizado
@@ -56,11 +56,11 @@ export const Text = styled.div`
 
   p {
     margin-top: 0.5rem;
-  }
+  };
 
   @media (max-height: 800px) {
     font-size: 0.8rem;
-  }
+  };
 `
 
 // Formulário
@@ -73,28 +73,28 @@ export const Form = styled.form`
     font-size: 0.9rem;
     color: red;
     font-weight: bold;
-  }
+  };
 
   .ReCAPTCHA{
     margin-top: 10px;
     margin-left: 15px;
-  }
+  };
 
   @media (max-width: 400px){
     .ReCAPTCHA{
         margin-left: -20px;
         transform: scale(0.7);
         
-    }}
+    };
+  };
 
-    
   @media (max-width: 290px){
     .ReCAPTCHA{
         margin-right: 100px; 
         transform: scale(0.6);
         
-    }
-  }
+    };
+  };
 `
 
 // Inputs
@@ -111,14 +111,13 @@ export const InputContainer = styled.div`
     font-weight: 600;
     margin-top: 5px;
     height: 10px;
-  }
-
+  };
 
   label {
     margin-bottom: 0.5rem;
     font-weight: bold;
     font-size: 0.9rem;
-  }
+  };
 
   input {
     width: 100%;
@@ -133,19 +132,19 @@ export const InputContainer = styled.div`
     &::placeholder {
       color: #aaa;
       font-size: 0.9rem;
-    }
-  }
+    };
+  };
 
   @media (max-width: 500px) {
     input {
       font-size: 0.8rem;
       height: 2rem;
-    }
+    };
 
     label {
       font-size: 0.8rem;
-    }
-  }
+    };
+  };
 `
 
 // Botão principal
@@ -163,12 +162,12 @@ export const Button = styled.button`
   &:hover {
     background-color: #246598;
     cursor: pointer;
-  }
+  };
 
   @media (max-width: 500px) {
     font-size: 0.9rem;
     height: 2.2rem;
-  }
+  };
 `
 
 // Banner
@@ -193,7 +192,7 @@ export const ContainerBanner = styled.div`
     margin-bottom: 1.5rem;
     text-align: center;
     color: #fff;
-  }
+  };
 
   button {
     margin-top: 5rem;
@@ -210,16 +209,15 @@ export const ContainerBanner = styled.div`
     &:hover {
       text-decoration: underline;
       cursor: pointer;
-    }
-  }
+    };
+  };
 
-  
     @media (max-width: 1600px) {
         height: 40.4rem;
-    }
+    };
 
     @media (max-width: 907px) {
         display: none;
-    }
+    };
 `
 

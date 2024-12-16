@@ -6,9 +6,9 @@ import {
   Logo,
   MainDiv,
   Text,
-} from "./styles"
+} from "./styles";
 
-import LogoBlack from "../../assets/logo-blockbit@2x 1.png"
+import LogoBlack from "../../assets/logo-blockbit@2x 1.png";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
@@ -18,12 +18,11 @@ import { useNavigate } from "react-router-dom";
 
 export function RegisterNameUser() {
   const navigate = useNavigate()
-  // Função para redirecionar ao clicar no botão "Register"
+  
   const handleRegisterClick = () => {
     navigate("/register");
   };
 
-  //validando schema
   const schema = Yup.object({
     company_name: Yup.string().required("Company name is required"),
     phone_number: Yup.string().min(11, "Enter cell phone number").required("Cell number is mandatory"),
@@ -35,7 +34,6 @@ export function RegisterNameUser() {
     cep: Yup.string().required('Your cep is required'),
   }).required();
  
-  //validando erros no schema
   const {
       register,
       handleSubmit,
@@ -44,7 +42,6 @@ export function RegisterNameUser() {
       resolver: yupResolver(schema),
   });
 
-  //conexão com banco de dados para enviar as sessões
   const onSubmit = async (data) => {
     try {
       
@@ -128,7 +125,7 @@ export function RegisterNameUser() {
         </Form>
       </Container>
     </MainDiv>
-  )
-}
+  );
+};
 
-export default RegisterNameUser
+export default RegisterNameUser;

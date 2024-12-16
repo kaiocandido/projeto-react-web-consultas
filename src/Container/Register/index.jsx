@@ -22,13 +22,11 @@ export function Register() {
     const navigate = useNavigate();
     const [captchaValue, setCaptchaValue] = useState(null)
 
-    // Função para lidar com a mudança do valor do CAPTCHA
     const handleCaptchaChange = (value) => {
       console.log("Captcha value:", value)
       setCaptchaValue(value)
     };
   
-    // Função para redirecionar ao clicar no botão "Register"
     const handleRegisterClick = () => {
       navigate("/");
     };
@@ -38,15 +36,12 @@ export function Register() {
       navigate("/infos");
     };*/
 
-
-  //validando schema
   const schema = Yup.object({
     email: Yup.string().email("Invalid email format").required("Email is required"),
     password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
     confirmPassword: Yup.string().oneOf([Yup.ref('password')], 'Passwords must be the same').required('Confirm your password'),
   }).required();
  
-  //validando erros no schema
   const {
       register,
       handleSubmit,
@@ -55,7 +50,6 @@ export function Register() {
       resolver: yupResolver(schema),
   });
 
-  //conexão com banco de dados para enviar as sessões
   const onSubmit = async (data) => {
     try {
       
@@ -78,8 +72,6 @@ export function Register() {
       toast.error('System failure, please try again!')
     }};
 
-
-    
   return (
     <MainDiv>
       <Container>
@@ -121,7 +113,7 @@ export function Register() {
         </div>
       </ContainerBanner>
     </MainDiv>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;

@@ -15,10 +15,10 @@ export const ContainerButton = styled.button`
   &:hover {
     background-color: #246598;
     cursor: pointer;
-  }
+  };
 
   @media (max-width: 500px) {
     font-size: 0.9rem;
     height: 2.2rem;
-  }
+  };
 `
